@@ -2,14 +2,20 @@ name: "Hola Mundo"
 
 on:
   push:
-      branches: ["main"]
+    branches: ["main"]
 
-  jobs:
-      deploy-ActionsOne:
-             runs-on: ubuntu-latest
-             steps:
-             uses: actions/checkout@v4
-                 run: echo "Hacemos pull del codigo"
-                 run: echo "Correr migraciones"
-                 run: echo "Generar binario"
-                 run: echo "Publicar version"
+jobs:
+  deploy-ActionsOne:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Hacemos pull del código
+
+      - name: Correr migraciones
+        run: echo "Correr migraciones"
+
+      - name: Generar binario
+        run: echo "Generar binario"
+
+      - name: Publicar versión
+        run: echo "Publicar version"
